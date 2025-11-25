@@ -1,0 +1,10 @@
+{
+  "domain": "smart_oil_gauge",
+  "name": "Smart Oil Gauge",
+  "documentation": "https://github.com/StaleLoafOfBread/smart-oil-gauge",
+  "issue_tracker": "https://github.com/StaleLoafOfBread/smart-oil-gauge/issues",
+  "dependencies": [],
+  "config_flow": true,
+  "codeowners": ["@StaleLoafOfBread"],
+  "requirements": []
+}
