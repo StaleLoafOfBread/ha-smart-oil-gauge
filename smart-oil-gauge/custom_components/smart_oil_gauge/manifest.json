@@ -1,10 +1,13 @@
 {
   "domain": "smart_oil_gauge",
   "name": "Smart Oil Gauge",
-  "documentation": "https://github.com/StaleLoafOfBread/smart-oil-gauge",
-  "issue_tracker": "https://github.com/StaleLoafOfBread/smart-oil-gauge/issues",
+  "version": "0.0.1",
+  "documentation": "https://github.com/StaleLoafOfBread/ha-smart-oil-gauge",
+  "issue_tracker": "https://github.com/StaleLoafOfBread/ha-smart-oil-gauge/issues",
   "dependencies": [],
+  "requirements": [],
   "config_flow": true,
   "codeowners": ["@StaleLoafOfBread"],
-  "requirements": []
+  "iot_class": "cloud_polling",
+  "loggers": ["custom_components.smart_oil_gauge"]
 }

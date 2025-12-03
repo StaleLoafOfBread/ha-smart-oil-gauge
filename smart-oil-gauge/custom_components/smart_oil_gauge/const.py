@@ -1,41 +1,61 @@
-"""Constants for Smart Oil Gauge."""
-# Base component constants
-NAME = "Smart Oil Gauge"
+"""
+Constants used by the Smart Oil Gauge integration.
+
+This file contains all string literals, configuration keys, URLs,
+default values, and platform declarations so they are defined in one place.
+
+Home Assistant imports this module frequently, so it MUST remain lightweight
+(no network I/O, no heavy logic).
+"""
+
+# -----------------------------------------------------------------------------
+# Basic integration identifiers
+# -----------------------------------------------------------------------------
+
+# Domain name used throughout Home Assistant for this integration
 DOMAIN = "smart_oil_gauge"
-DOMAIN_DATA = f"{DOMAIN}_data"
-VERSION = "0.0.0"
 
-ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
-ISSUE_URL = "https://github.com/StaleLoafOfBread/smart-oil-gauge/issues"
-
-# Icons
-ICON = "mdi:format-quote-close"
-
-# Device classes
-BINARY_SENSOR_DEVICE_CLASS = "connectivity"
-
-# Platforms
-BINARY_SENSOR = "binary_sensor"
-SENSOR = "sensor"
-SWITCH = "switch"
-PLATFORMS = [BINARY_SENSOR, SENSOR, SWITCH]
+# Human-readable name (optional, but useful for logs / devices)
+INTEGRATION_NAME = "Smart Oil Gauge"
 
 
-# Configuration and options
-CONF_ENABLED = "enabled"
+# -----------------------------------------------------------------------------
+# Config entry keys (stored in entry.data or entry.options)
+# -----------------------------------------------------------------------------
+
 CONF_USERNAME = "username"
 CONF_PASSWORD = "password"
 
-# Defaults
-DEFAULT_NAME = DOMAIN
+# Option: scan interval (seconds between API updates)
+CONF_SCAN_INTERVAL = "scan_interval"
 
 
-STARTUP_MESSAGE = f"""
--------------------------------------------------------------------
-{NAME}
-Version: {VERSION}
-This is a custom integration!
-If you have any issues with this you need to open an issue here:
-{ISSUE_URL}
--------------------------------------------------------------------
-"""
+# -----------------------------------------------------------------------------
+# Default values
+# -----------------------------------------------------------------------------
+
+# Default polling interval for tank data.
+#
+# SmartOilGauge tanks updates once an hour at its most frequent setting
+DEFAULT_SCAN_INTERVAL = 3600  # 3600 seconds = 1 hour
+
+# -----------------------------------------------------------------------------
+# API endpoints
+# -----------------------------------------------------------------------------
+
+# Login page URL used to fetch nonce + authenticate.
+LOGIN_URL = "https://app.smartoilgauge.com/login.php"
+
+# AJAX endpoint for API actions (e.g., get_tanks_list)
+AJAX_URL = "https://app.smartoilgauge.com/ajax/main_ajax.php"
+
+
+# -----------------------------------------------------------------------------
+# Platform support (sensor + binary_sensor modules)
+# -----------------------------------------------------------------------------
+
+# Home Assistant will forward setup to these platform modules.
+# Each entry must correspond to a file:
+#   - sensor.py
+#   - binary_sensor.py
+PLATFORMS = ("sensor", "binary_sensor")

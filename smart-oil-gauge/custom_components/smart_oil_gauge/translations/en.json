@@ -1,31 +1,39 @@
 {
+  "title": "Smart Oil Gauge",
   "config": {
     "step": {
       "user": {
-        "title": "Smart Oil Gauge",
-        "description": "If you need help with the configuration have a look here: https://github.com/StaleLoafOfBread/smart-oil-gauge",
+        "title": "Connect to Smart Oil Gauge",
+        "description": "Enter your Smart Oil Gauge account credentials.",
         "data": {
           "username": "Username",
-          "password": "Password"
+          "password": "Password",
+          "scan_interval": "Scan interval (seconds)"
         }
       }
     },
     "error": {
-      "auth": "Username/Password is wrong."
+      "auth": "Invalid username or password.",
+      "cannot_connect": "Unable to connect to Smart Oil Gauge. Please check your network or try again later.",
+      "unknown": "Unexpected error occurred."
     },
     "abort": {
-      "single_instance_allowed": "Only a single instance is allowed."
+      "already_configured": "This account is already configured."
     }
   },
   "options": {
     "step": {
-      "user": {
+      "init": {
+        "title": "Smart Oil Gauge Options",
+        "description": "Adjust integration settings.",
         "data": {
-          "binary_sensor": "Binary sensor enabled",
-          "sensor": "Sensor enabled",
-          "switch": "Switch enabled"
+          "scan_interval": "Scan interval (seconds)"
         }
       }
     }
+  },
+  "reauth": {
+    "title": "Reauthenticate Smart Oil Gauge",
+    "description": "Your credentials are no longer valid. Please re-enter your username and password."
   }
 }
