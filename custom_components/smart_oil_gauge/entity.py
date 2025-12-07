@@ -7,11 +7,12 @@ This module centralizes:
 
 Both sensor.py and binary_sensor.py import from here to avoid duplication.
 """
-
 from __future__ import annotations
 
 import logging
-from typing import Any, Dict, List
+from typing import Any
+from typing import Dict
+from typing import List
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.helpers.update_coordinator import CoordinatorEntity

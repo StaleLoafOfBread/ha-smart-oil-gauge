@@ -10,17 +10,19 @@ It deliberately knows nothing about Home Assistant. The integration code
 (__init__.py, sensor.py, etc.) uses this client via SmartOilClient and
 reacts to AuthError / ApiError accordingly.
 """
-
 from __future__ import annotations
 
 import asyncio
 import logging
 import re
-from typing import Any, Dict, Optional
+from typing import Any
+from typing import Dict
+from typing import Optional
 
 import aiohttp
 
-from .const import AJAX_URL, LOGIN_URL
+from .const import AJAX_URL
+from .const import LOGIN_URL
 
 _LOGGER = logging.getLogger(__name__)
 

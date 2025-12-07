@@ -6,7 +6,6 @@ Settings -> Devices & Services -> Smart Oil Gauge -> ⋮ -> Download diagnostics
 
 Diagnostics files help with debugging but MUST NOT contain sensitive data.
 """
-
 from __future__ import annotations
 
 from homeassistant.components.diagnostics import async_redact_data

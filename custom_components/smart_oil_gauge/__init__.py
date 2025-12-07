@@ -10,7 +10,6 @@ This file handles:
 
 Almost every Home Assistant integration follows this same pattern.
 """
-
 # Future Annotations allows modern, clean type hints
 from __future__ import annotations
 
@@ -21,22 +20,24 @@ from typing import Any
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.core_config import Config
-from homeassistant.exceptions import ConfigEntryAuthFailed, ConfigEntryNotReady
+from homeassistant.exceptions import ConfigEntryAuthFailed
+from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from homeassistant.helpers.update_coordinator import UpdateFailed
+
+from .api import ApiError
+from .api import AuthError
+from .api import SmartOilClient
+from .const import CONF_PASSWORD
+from .const import CONF_SCAN_INTERVAL
+from .const import CONF_USERNAME
+from .const import DEFAULT_SCAN_INTERVAL
+from .const import DOMAIN
+from .const import PLATFORMS
 
 # Our local library code
-from .api import ApiError, AuthError, SmartOilClient
-
 # Shared constants
-from .const import (
-    CONF_PASSWORD,
-    CONF_SCAN_INTERVAL,
-    CONF_USERNAME,
-    DEFAULT_SCAN_INTERVAL,
-    DOMAIN,
-    PLATFORMS,
-)
 
 # Create a logger for this integration
 # The logger name becomes "custom_components.smart_oil_gauge"

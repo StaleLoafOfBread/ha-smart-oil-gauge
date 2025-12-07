@@ -7,11 +7,9 @@ default values, and platform declarations so they are defined in one place.
 Home Assistant imports this module frequently, so it MUST remain lightweight
 (no network I/O, no heavy logic).
 """
-
 # -----------------------------------------------------------------------------
 # Basic integration identifiers
 # -----------------------------------------------------------------------------
-
 # Domain name used throughout Home Assistant for this integration
 DOMAIN = "smart_oil_gauge"
 

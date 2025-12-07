@@ -8,7 +8,6 @@ This file handles:
 It is the only part of the integration that the user interacts with directly
 via the Home Assistant UI.
 """
-
 from __future__ import annotations
 
 import logging
@@ -20,14 +19,14 @@ from homeassistant.core import callback
 from homeassistant.data_entry_flow import FlowResult
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
 
-from .api import AuthError, ApiError, SmartOilClient
-from .const import (
-    CONF_PASSWORD,
-    CONF_SCAN_INTERVAL,
-    CONF_USERNAME,
-    DEFAULT_SCAN_INTERVAL,
-    DOMAIN,
-)
+from .api import ApiError
+from .api import AuthError
+from .api import SmartOilClient
+from .const import CONF_PASSWORD
+from .const import CONF_SCAN_INTERVAL
+from .const import CONF_USERNAME
+from .const import DEFAULT_SCAN_INTERVAL
+from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 

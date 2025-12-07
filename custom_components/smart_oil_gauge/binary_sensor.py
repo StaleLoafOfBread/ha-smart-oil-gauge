@@ -5,23 +5,25 @@ Defines binary_sensor entities for the integration:
 - One LowOilSensor per tank:
     - ON when the current gallons are at or below the configured low-level threshold.
 """
-
 from __future__ import annotations
 
 import logging
-from typing import Any, Iterable, List
+from typing import Any
+from typing import Iterable
+from typing import List
 
-from homeassistant.components.binary_sensor import (
-    BinarySensorDeviceClass,
-    BinarySensorEntity,
-)
+from homeassistant.components.binary_sensor import BinarySensorDeviceClass
+from homeassistant.components.binary_sensor import BinarySensorEntity
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity import Entity, EntityCategory
+from homeassistant.core import callback
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity import Entity
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import DOMAIN
-from .entity import SmartOilTankEntity, _safe_float, _tanks_from
+from .entity import _safe_float
+from .entity import _tanks_from
+from .entity import SmartOilTankEntity
 
 _LOGGER = logging.getLogger(__name__)
 

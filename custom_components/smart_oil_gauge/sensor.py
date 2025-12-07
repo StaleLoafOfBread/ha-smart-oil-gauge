@@ -1,25 +1,29 @@
 """Sensor platform for Smart Oil Gauge."""
-
 from __future__ import annotations
 
 import logging
-from typing import Any, Iterable, List
+from typing import Any
+from typing import Iterable
+from typing import List
 
-from homeassistant.components.sensor import (
-    SensorDeviceClass,
-    SensorEntity,
-    SensorStateClass,
-)
+from homeassistant.components.sensor import SensorDeviceClass
+from homeassistant.components.sensor import SensorEntity
+from homeassistant.components.sensor import SensorStateClass
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.const import PERCENTAGE, UnitOfVolume
-from homeassistant.core import HomeAssistant, callback
-from homeassistant.helpers.entity import Entity, EntityCategory
+from homeassistant.const import PERCENTAGE
+from homeassistant.const import UnitOfVolume
+from homeassistant.core import callback
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity import Entity
+from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.util import dt as dt_util
 
 from .const import DOMAIN
-from .entity import SmartOilTankEntity, _safe_float, _tanks_from
+from .entity import _safe_float
+from .entity import _tanks_from
+from .entity import SmartOilTankEntity
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -264,7 +268,8 @@ class SensorUsgSensor(BaseTankSensor):
 
     _attr_name = "Oil Usage"
     # The underlying API field ("sensor_usg") is gal/day.
-    # We use a custom unit string for now.
+    # We use gal/d which will be supported in a future version of Home Assistant.
+    # https://github.com/home-assistant/core/pull/157394
     _attr_native_unit_of_measurement = "gal/d"
     _attr_device_class = SensorDeviceClass.VOLUME_FLOW_RATE
     _attr_state_class = SensorStateClass.MEASUREMENT
