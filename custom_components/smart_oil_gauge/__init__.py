@@ -22,6 +22,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.core_config import Config
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.exceptions import ConfigEntryNotReady
+from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from homeassistant.helpers.update_coordinator import UpdateFailed
@@ -42,6 +43,9 @@ from .const import PLATFORMS
 # Create a logger for this integration
 # The logger name becomes "custom_components.smart_oil_gauge"
 _LOGGER: logging.Logger = logging.getLogger(__package__)
+
+# Configuration schema for YAML configuration
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
 
 # --------------------------------------------------------------------------------------

@@ -31,9 +31,5 @@
         }
       }
     }
-  },
-  "reauth": {
-    "title": "Reauthenticate Smart Oil Gauge",
-    "description": "Your credentials are no longer valid. Please re-enter your username and password."
   }
 }
