@@ -14,14 +14,6 @@
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
-
-**This component will set up the following platforms.**
-
-| Platform        | Description                         |
-| --------------- | ----------------------------------- |
-| `binary_sensor` | Show something `True` or `False`.   |
-| `sensor`        | Show info from Smart Oil Gauge API. |
-
 ## Installation
 
 1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
@@ -32,12 +24,11 @@
 6. Restart Home Assistant
 7. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Smart Oil Gauge"
 
+## Configuration
 
-## Configuration is done in the UI
+Smart Oil Gauge supports configuration through the frontend (Settings -> Devices and Services -> Smart Oil Gauge).
 
-<!---->
-
-## Contributions are welcome!
+## Contributions are welcome
 
 If you want to contribute to this please read the [Contribution guidelines](CONTRIBUTING.md)
 
