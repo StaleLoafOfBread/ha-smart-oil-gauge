@@ -4,3 +4,7 @@ pythonenv*
 .coverage
 venv
 .venv
+custom_components/smart_oil_gauge/response.json
+.gitignore
+smart_oil_gauge.zip
+custom_components/smart_oil_gauge/logo.webp
